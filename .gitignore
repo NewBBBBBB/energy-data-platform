@@ -1,0 +1,33 @@
+
+# Environment variables and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.aws/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Runtime logs
+logs/
+dbt/logs/
+*.log
+
+# Local pipeline state
+state/
+
+# Airflow generated files
+airflow/config/airflow.cfg
+airflow/logs/
+airflow/airflow.db
+
+# dbt generated files
+**/target/
+**/dbt_packages/
+
+# macOS
+.DS_Store

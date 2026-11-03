@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: fct_hourly_demand
+    columns:
+      - name: period_utc
+        data_tests:
+          - not_null
+
+      - name: demand_mwh
+        data_tests:
+          - not_null
+
+  - name: mart_daily_demand
+    columns:
+      - name: demand_date
+        data_tests:
+          - not_null
+
+      - name: respondent
+        data_tests:
+          - not_null
+
+      - name: total_demand_mwh
+        data_tests:
+          - not_null
