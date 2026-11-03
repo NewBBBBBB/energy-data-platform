@@ -332,7 +332,7 @@ Data is currently refreshed manually in Power BI Desktop.
 ### Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/energy-data-platform.git
+git clone https://github.com/NewBBBBBB/energy-data-platform.git
 cd energy-data-platform
 ```
 
