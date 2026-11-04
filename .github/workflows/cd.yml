@@ -11,7 +11,7 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -27,3 +27,15 @@ jobs:
           aws s3 cp \
             transformation/silver/demand_transformation.py \
             s3://aws-glue-assets-755332618937-us-east-1/scripts/eia-demand-bronze-to-silver.py
+
+      - name: Debug OIDC identity
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const token = await core.getIDToken('sts.amazonaws.com');
+            const payload = JSON.parse(
+              Buffer.from(token.split('.')[1], 'base64url').toString()
+            );
+            console.log('Audience:', payload.aud);
+            console.log('Subject:', payload.sub);
+            console.log('Issuer:', payload.iss);
